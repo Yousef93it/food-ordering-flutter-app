@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/style.dart';
+
+import 'restaurant_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -214,15 +217,288 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.35,
+                            height: 165,
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 20, horizontal: 20),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(30)),
+                              color: green,
+                              boxShadow: [
+                                BoxShadow(
+                                  spreadRadius: 0,
+                                  offset: const Offset(0, 10),
+                                  blurRadius: 0,
+                                  color: green.withOpacity(0.4),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          "asset/images/food2.png",
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 15),
+                                const Text(
+                                  "Okinawa Sushi",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                                const SizedBox(height: 5),
+                                Row(
+                                  children: const [
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                      size: 14,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                      size: 14,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                      size: 14,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                      size: 14,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white70,
+                                      size: 14,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.35,
+                            height: 165,
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 20, horizontal: 20),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(30)),
+                              color: black,
+                              boxShadow: [
+                                BoxShadow(
+                                  spreadRadius: 0,
+                                  offset: const Offset(0, 10),
+                                  blurRadius: 0,
+                                  color: black.withOpacity(0.4),
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          "asset/images/food3.png",
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(height: 15),
+                                const Text(
+                                  "Okinawa Sushi",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                                const SizedBox(height: 5),
+                                Row(
+                                  children: const [
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                      size: 14,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                      size: 14,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                      size: 14,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white70,
+                                      size: 14,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white70,
+                                      size: 14,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                )
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const Text(
+                      "Places",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        height: 0.5,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                restaurantsbuilder("hotel1", "Sushi Den"),
+                const SizedBox(
+                  height: 20,
+                ),
+                restaurantsbuilder("hotel2", "Le Davincci"),
+                const SizedBox(
+                  height: 20,
+                ),
+                restaurantsbuilder("hotel3", "Subway"),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Row restaurantsbuilder(String img, String restaurantName) {
+    return Row(
+      children: [
+        Container(
+          height: 100,
+          width: 100,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("asset/images/$img.png"),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                restaurantName,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    size: 20,
+                    color: aBitLighterGreen,
+                  ),
+                  Icon(
+                    Icons.star,
+                    size: 20,
+                    color: aBitLighterGreen,
+                  ),
+                  Icon(
+                    Icons.star,
+                    size: 20,
+                    color: aBitLighterGreen,
+                  ),
+                  Icon(
+                    Icons.star,
+                    size: 20,
+                    color: aBitLighterGreen,
+                  ),
+                  Icon(
+                    Icons.star,
+                    size: 20,
+                    color: aBitLighterGreen,
+                  ),
+                ],
+              ),
+              const Text(
+                "Lorem ipsum sits dolar amet is for publishing",
+                style: TextStyle(fontSize: 12),
+              )
+            ],
+          ),
+        ),
+        InkWell(
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const RestaurantScreen(),
+            ),
+          ),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(40)),
+              color: aBitLighterGreen,
+            ),
+            child: const Text(
+              "Order Now",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w700),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
