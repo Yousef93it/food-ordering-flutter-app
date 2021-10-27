@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
-                      "Today's special",
+                      "Today's specials",
                       style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.w700,

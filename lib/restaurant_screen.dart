@@ -51,7 +51,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                               IconButton(
                                 onPressed: () {},
                                 icon: const Icon(
-                                  Icons.search,
+                                  Icons.shopping_cart,
                                   color: Colors.white,
                                 ),
                               ),
@@ -97,6 +97,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                                         Icons.star,
                                         color: Colors.white,
                                       ),
+                                      SizedBox(width: 5),
                                       Text(
                                         "250 Reviews",
                                         style: TextStyle(
@@ -118,8 +119,8 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                                 ),
                                 child: Center(
                                   child: IconButton(
-                                    icon: const Icon(Icons.favorite,
-                                        size: 35, color: Colors.redAccent),
+                                    icon: const Icon(Icons.star,
+                                        size: 35, color: Colors.orange),
                                     onPressed: () {},
                                   ),
                                 ),
@@ -131,7 +132,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                             "Lorem ipsum dolar sits amet was ist daaaas",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 12,
+                              fontSize: 13,
                             ),
                           ),
                         ],
@@ -342,7 +343,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               color: aBitLighterGreen,
             ),
             child: const Text(
-              "Check In",
+              "Add to Cart",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 12,
