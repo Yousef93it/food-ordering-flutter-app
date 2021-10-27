@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/style.dart';
 
+import 'cart_screen.dart';
+import 'meal_detail_screen.dart';
+
 class RestaurantScreen extends StatefulWidget {
   const RestaurantScreen({Key? key}) : super(key: key);
 
@@ -10,8 +13,9 @@ class RestaurantScreen extends StatefulWidget {
 }
 
 class _RestaurantScreenState extends State<RestaurantScreen> {
+   bool isStarred = false;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -119,9 +123,17 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                                 ),
                                 child: Center(
                                   child: IconButton(
-                                    icon: const Icon(Icons.star,
-                                        size: 35, color: Colors.orange),
-                                    onPressed: () {},
+                                    icon: Icon(
+                                        isStarred
+                                            ? Icons.star
+                                            : Icons.star_border,
+                                        size: 35,
+                                        color: Colors.orange),
+                                    onPressed: () {
+                                      setState(() {
+                                        isStarred = !isStarred;
+                                      });
+                                    },
                                   ),
                                 ),
                               ),
@@ -224,12 +236,15 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
       width: 120,
       child: Column(
         children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("asset/images/$dishImg.png"),
+          InkWell(
+            onTap: openMealDetailScreen,
+            child: Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("asset/images/$dishImg.png"),
+                ),
               ),
             ),
           ),
@@ -254,20 +269,21 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 ),
               ),
               const SizedBox(height: 5),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 7,
-                  horizontal: 20,
+              InkWell(
+                onTap: openMealDetailScreen,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 7,
+                    horizontal: 20,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(30)),
+                    border: Border.all(color: black),
+                  ),
+                  child: const Text("more info"),
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.circular(30)),
-                  border: Border.all(color: black),
-                ),
-                child: const Text("+ Cart"),
               ),
-              SizedBox(
-                height: 15,
-              )
+              const SizedBox(height: 15),
             ],
           ),
         ],
@@ -335,7 +351,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           ),
         ),
         InkWell(
-          onTap: () {},
+          onTap: openMealDetailScreen,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             decoration: BoxDecoration(
@@ -343,7 +359,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               color: aBitLighterGreen,
             ),
             child: const Text(
-              "Add to Cart",
+              "More Info",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 12,
@@ -353,5 +369,15 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
         )
       ],
     );
+  }
+
+  void openCartScreen() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const CartScreen()));
+  }
+
+  void openMealDetailScreen() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const MealDetailScreen()));
   }
 }
