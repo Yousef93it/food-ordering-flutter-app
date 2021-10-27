@@ -331,7 +331,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 const SizedBox(height: 15),
                                 const Text(
-                                  "Okinawa Sushi",
+                                  "Somewhere's Sushi",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
@@ -477,12 +477,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         InkWell(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const RestaurantScreen(),
-            ),
-          ),
+          onTap: openRestaurantScreen,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             decoration: BoxDecoration(
@@ -490,7 +485,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color: aBitLighterGreen,
             ),
             child: const Text(
-              "Order Now",
+              "Check In",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 12,
@@ -499,6 +494,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         )
       ],
+    );
+  }
+
+  void openRestaurantScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const RestaurantScreen()),
     );
   }
 }
