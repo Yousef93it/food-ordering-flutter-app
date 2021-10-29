@@ -1,37 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/cart/cart_screen.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/badge.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/side_menu.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/home/search_field.dart';
 
-import 'restaurant_screen.dart';
-import 'style.dart';
+import '../meal_detail/meal_detail_screen.dart';
+import '../restaurant/restaurant_screen.dart';
+import '../style.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreen extends StatelessWidget {
+  static String routeName = "/home";
+  const HomeScreen({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const SideMenu(),
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.black38),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            size: 27,
-          ),
-          onPressed: () {},
-        ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              size: 27,
-              color: Colors.grey,
+          Badge(
+            child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, CartScreen.routeName);
+              },
+              icon: const Icon(
+                Icons.shopping_cart,
+                size: 27,
+                color: Colors.black38,
+              ),
             ),
+            value: "2",
           ),
         ],
       ),
@@ -45,47 +45,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 20,
                 ),
+                const SizedBox(height: 10),
+                const SearchField(),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
+                  children: const [
+                    Text(
                       "Today's specials",
                       style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.w700,
                       ),
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 25, vertical: 10),
-                          decoration: BoxDecoration(
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(25),
-                            ),
-                            color: aBitLighterGreen,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Icon(
-                                Icons.add_shopping_cart,
-                                color: Colors.white,
-                                size: 18,
-                              ),
-                              Text(
-                                "Cart",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),
@@ -132,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 decoration: const BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(
-                                      "asset/images/food1.png",
+                                      "assets/images/food1.png",
                                     ),
                                   ),
                                 ),
@@ -146,43 +117,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 16,
                                 fontWeight: FontWeight.w700,
                               ),
-                            ),
-                            const SizedBox(height: 5),
-                            Row(
-                              children: const [
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.white,
-                                  size: 17,
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.white,
-                                  size: 17,
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.white,
-                                  size: 17,
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.white,
-                                  size: 17,
-                                ),
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.white,
-                                  size: 17,
-                                ),
-                                Text(
-                                  "250 Ratings",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                  ),
-                                )
-                              ],
                             ),
                             const SizedBox(height: 10),
                             const Text(
@@ -226,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     decoration: const BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage(
-                                          "asset/images/food2.png",
+                                          "assets/images/food2.png",
                                         ),
                                       ),
                                     ),
@@ -240,36 +174,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontSize: 16,
                                     fontWeight: FontWeight.w700,
                                   ),
-                                ),
-                                const SizedBox(height: 5),
-                                Row(
-                                  children: const [
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                      size: 14,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                      size: 14,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                      size: 14,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                      size: 14,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white70,
-                                      size: 14,
-                                    ),
-                                  ],
                                 ),
                               ],
                             ),
@@ -301,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     decoration: const BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage(
-                                          "asset/images/food3.png",
+                                          "assets/images/food3.png",
                                         ),
                                       ),
                                     ),
@@ -317,40 +221,50 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                                 const SizedBox(height: 5),
-                                Row(
-                                  children: const [
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                      size: 14,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                      size: 14,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white,
-                                      size: 14,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white70,
-                                      size: 14,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.white70,
-                                      size: 14,
-                                    ),
-                                  ],
-                                ),
                               ],
                             ),
                           ),
                         ],
                       ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const Text(
+                      "Recent Orders",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        height: 0.5,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      dishItemWidget(context, "sushi", "Row Sushi",
+                          "10 types of sushi served in a row"),
+                      const SizedBox(width: 10),
+                      dishItemWidget(context, "sushi2", "Prato Sushi",
+                          "10 types of sushi served in a row"),
+                      const SizedBox(width: 10),
+                      dishItemWidget(context, "sushi3", "Sushi Box",
+                          "10 types of sushi served in a row"),
+                      const SizedBox(width: 10),
+                      dishItemWidget(context, "sushi4", "Row Sushi",
+                          "10 types of sushi served in a row"),
                     ],
                   ),
                 ),
@@ -378,15 +292,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                restaurantsbuilder("hotel1", "Sushi Den"),
+                restaurantsbuilder(context, "hotel1", "Sushi Den"),
                 const SizedBox(
                   height: 20,
                 ),
-                restaurantsbuilder("hotel2", "Le Davincci"),
+                restaurantsbuilder(context, "hotel2", "Le Davincci"),
                 const SizedBox(
                   height: 20,
                 ),
-                restaurantsbuilder("hotel3", "Subway"),
+                restaurantsbuilder(context, "hotel3", "Subway"),
               ],
             ),
           ),
@@ -395,7 +309,73 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Row restaurantsbuilder(String img, String restaurantName) {
+  SizedBox dishItemWidget(BuildContext context, String dishImg, String dishName,
+      String dishDescription) {
+    return SizedBox(
+      width: 120,
+      child: Column(
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(MealDetailScreen.routeName);
+            },
+            child: Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/$dishImg.png"),
+                ),
+              ),
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                dishName,
+                style: const TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                dishDescription,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: black,
+                ),
+              ),
+              const SizedBox(height: 5),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed(MealDetailScreen.routeName);
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 7,
+                    horizontal: 20,
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(30)),
+                    border: Border.all(color: black),
+                  ),
+                  child: const Text("more info"),
+                ),
+              ),
+              const SizedBox(height: 15),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Row restaurantsbuilder(
+      BuildContext context, String img, String restaurantName) {
     return Row(
       children: [
         Container(
@@ -403,7 +383,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: 100,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("asset/images/$img.png"),
+              image: AssetImage("assets/images/$img.png"),
             ),
           ),
         ),
@@ -455,7 +435,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         InkWell(
-          onTap: openRestaurantScreen,
+          onTap: () {
+            Navigator.of(context).pushNamed(RestaurantScreen.routeName);
+          },
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             decoration: BoxDecoration(
@@ -470,15 +452,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.w700),
             ),
           ),
-        )
+        ),
       ],
-    );
-  }
-
-  void openRestaurantScreen() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const RestaurantScreen()),
     );
   }
 }

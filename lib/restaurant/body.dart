@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/style.dart';
 
-import 'cart_screen.dart';
-import 'meal_detail_screen.dart';
-
-class RestaurantScreen extends StatefulWidget {
-  const RestaurantScreen({Key? key}) : super(key: key);
+import '../cart/cart_screen.dart';
+import '../meal_detail/meal_detail_screen.dart';
+class Body extends StatefulWidget {
+  const Body({Key key}) : super(key: key);
 
   @override
-  State<RestaurantScreen> createState() => _RestaurantScreenState();
+  State<Body> createState() => _BodyState();
 }
 
-class _RestaurantScreenState extends State<RestaurantScreen> {
+class _BodyState extends State<Body> {
    bool isStarred = false;
   @override
   Widget build(BuildContext context) {  
@@ -30,7 +29,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                       decoration: BoxDecoration(
                         color: blue,
                         image: const DecorationImage(
-                          image: AssetImage("asset/images/hotelBig.png"),
+                          image: AssetImage("assets/images/hotelBig.png"),
                           fit: BoxFit.cover,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -243,7 +242,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               height: 100,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("asset/images/$dishImg.png"),
+                  image: AssetImage("assets/images/$dishImg.png"),
                 ),
               ),
             ),
@@ -299,7 +298,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           width: 100,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("asset/images/$img.png"),
+              image: AssetImage("assets/images/$img.png"),
             ),
           ),
         ),

@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/style.dart';
 
-class MealDetailScreen extends StatefulWidget {
-  const MealDetailScreen({Key? key}) : super(key: key);
+import '../style.dart';
+
+class Body extends StatefulWidget {
+  const Body({Key key}) : super(key: key);
 
   @override
-  _MealDetailScreenState createState() => _MealDetailScreenState();
+  _BodyState createState() => _BodyState();
 }
 
-class _MealDetailScreenState extends State<MealDetailScreen> {
+class _BodyState extends State<Body> {
   bool isFavorite = false;
+  int quantity = 1;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -27,7 +29,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                       decoration: BoxDecoration(
                         color: blue,
                         image: const DecorationImage(
-                          image: AssetImage("asset/images/Ebi Fry.jpeg"),
+                          image: AssetImage("assets/images/Ebi Fry.jpeg"),
                           fit: BoxFit.cover,
                         ),
                         borderRadius: const BorderRadius.only(
@@ -114,13 +116,90 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
               padding: const EdgeInsets.all(10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     "Ingredients",
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w700,
                     ),
+                  ),
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            if (quantity > 1) {
+                              quantity = quantity - 1;
+                            }
+                          });
+                        },
+                        child: Container(
+                          child: const Center(
+                            child: Text(
+                              "-",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          width: 30,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: green,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Center(
+                          child: Text(
+                            "$quantity",
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        width: 30,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          color: black,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            quantity = quantity + 1;
+                          });
+                        },
+                        child: Container(
+                          child: const Center(
+                            child: Text(
+                              "+",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          width: 30,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: green,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -130,37 +209,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
               child: Column(
                 children: const [
                   Text(
-                    "IngredientsIngredientIngredient",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                  Text(
-                    "IngredientsIngredientIngredient",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                  Text(
-                    "Ingredients IngredientIngredient",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                  Text(
-                    "IngredientsIngredientIngredient",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                  Text(
-                    "IngredientsIngredientIngredient",
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                  Text(
-                    "IngredientsIngredientIngredient",
+                    "IngredientsIngredientIngredientsIngredientIngredientsIngredientIngredientsIngredientIngredientsIngredientIngredientsIngredientIngredientIngredientsIngredientIngredientIngredientsIngredientIngredientIngredientsIngredientIngredientIngredientsIngredientIngredientIngredientsIngredientIngredient",
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -168,9 +217,33 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                 ],
               ),
             ),
+            const SizedBox(height: 20),
+            Container(
+              padding: const EdgeInsets.all(10),
+              width: double.infinity,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: green,
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15),
+                  ),
+                ),
+                child: FlatButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "Add to Cart",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
