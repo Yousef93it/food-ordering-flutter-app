@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/cart/cart_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/badge.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/side_menu.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/home/search_field.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/cart/cart_screen.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/home/search_field.dart';
 
+import '../../style.dart';
 import '../meal_detail/meal_detail_screen.dart';
 import '../restaurant/restaurant_screen.dart';
-import '../style.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";

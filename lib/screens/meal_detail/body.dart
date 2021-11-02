@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../style.dart';
+import '../../style.dart';
+
 
 class Body extends StatefulWidget {
   const Body({Key key}) : super(key: key);

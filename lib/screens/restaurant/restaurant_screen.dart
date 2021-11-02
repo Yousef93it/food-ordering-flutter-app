@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/cart/cart_screen.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/cart/cart_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/badge.dart';
 
 import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/side_menu.dart';
@@ -40,23 +40,3 @@ class RestaurantScreen extends StatelessWidget {
     );
   }
 }
- 
-//  Row(
-//                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                             children: [
-//                               IconButton(
-//                                 onPressed: () {},
-//                                 icon: const Icon(
-//                                   Icons.arrow_back,
-//                                   color: Colors.white,
-//                                 ),
-//                               ),
-//                               IconButton(
-//                                 onPressed: () {},
-//                                 icon: const Icon(
-//                                   Icons.shopping_cart,
-//                                   color: Colors.white,
-//                                 ),
-//                               ),
-//                             ],
-//                           ),
