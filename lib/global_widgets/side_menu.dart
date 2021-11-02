@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/style.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/constants.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/cart/cart_screen.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/filter/filter_screen.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/home/home_screen.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -13,7 +16,7 @@ class SideMenu extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(color: aBitLighterGreen),
+            decoration: const BoxDecoration(color: aBitLighterGreen),
             child: Image.asset(
               //replace it with the logo of the app
               "assets/images/food1.png",
@@ -22,6 +25,35 @@ class SideMenu extends StatelessWidget {
           DrawerListTile(
             title: "Home",
             //  iconSvg: "assets/icons/Home.svg",
+            press: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(HomeScreen.routeName);
+            },
+          ),
+          DrawerListTile(
+            title: "Filters",
+            // iconSvg: "assets/icons/Home.svg",
+            press: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(FilterScreen.routeName);
+            },
+          ),
+          DrawerListTile(
+            title: "Favorites",
+            //  iconSvg: "assets/icons/Home.svg",
+            press: () {},
+          ),
+          DrawerListTile(
+            title: "Cart",
+            // iconSvg: "assets/icons/Cart.svg",
+            press: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(CartScreen.routeName);
+            },
+          ),
+          DrawerListTile(
+            title: "Orders",
+            // iconSvg: "assets/icons/Orders.svg",
             press: () {},
           ),
           DrawerListTile(
@@ -30,18 +62,8 @@ class SideMenu extends StatelessWidget {
             press: () {},
           ),
           DrawerListTile(
-            title: "Cart",
-            // iconSvg: "assets/icons/Cart.svg",
-            press: () {},
-          ),
-          DrawerListTile(
-            title: "Orders",
-            // iconSvg: "assets/icons/Orders.svg",
-            press: () {},
-          ),
-          DrawerListTile(
             // iconSvg: "assets/icons/Info.svg",
-            title: "Aide",
+            title: "Help",
             press: () {},
           ),
           DrawerListTile(

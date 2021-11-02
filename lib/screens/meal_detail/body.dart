@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../style.dart';
+import '../../constants.dart';
+
 
 
 class Body extends StatefulWidget {
@@ -27,13 +28,13 @@ class _BodyState extends State<Body> {
                   children: [
                     Container(
                       padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: blue,
-                        image: const DecorationImage(
+                        image:  DecorationImage(
                           image: AssetImage("assets/images/Ebi Fry.jpeg"),
                           fit: BoxFit.cover,
                         ),
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(40),
                           bottomRight: Radius.circular(40),
                         ),
@@ -223,9 +224,9 @@ class _BodyState extends State<Body> {
               padding: const EdgeInsets.all(10),
               width: double.infinity,
               child: DecoratedBox(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: green,
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(15),
                     bottomRight: Radius.circular(15),
                   ),

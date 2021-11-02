@@ -4,7 +4,7 @@ import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/side_menu
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/cart/cart_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/home/search_field.dart';
 
-import '../../style.dart';
+import '../../constants.dart';
 import '../meal_detail/meal_detail_screen.dart';
 import '../restaurant/restaurant_screen.dart';
 
@@ -356,7 +356,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 5),
               Text(
                 dishDescription,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                   color: black,
@@ -412,7 +412,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Row(
-                children: [
+                children: const [
                   Icon(
                     Icons.star,
                     size: 20,
@@ -453,8 +453,8 @@ class HomeScreen extends StatelessWidget {
           },
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(40)),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(40)),
               color: aBitLighterGreen,
             ),
             child: const Text(

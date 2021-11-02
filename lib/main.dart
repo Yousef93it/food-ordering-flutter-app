@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:food_ordering_app_ui_fur_mobile_systeme/routes.dart';
-import 'screens/home/home_screen.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/signIn/sign_in_screen.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/unknown_route/unknown_route_screen.dart';
 
 
 void main() {
@@ -15,7 +16,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,8 +24,13 @@ class MyApp extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.black),
         fontFamily: 'montserrat',
       ),
-      home: const HomeScreen(),
+      home: SignInScreen(),
       routes: routes,
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (ctx) => UnknownRouteScreen(),
+        );
+      },
     );
   }
 }

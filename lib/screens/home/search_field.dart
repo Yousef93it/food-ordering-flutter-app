@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/meal_detail/meal_detail_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/style.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/constants.dart';
 
 class SearchField extends StatefulWidget {
   const SearchField({

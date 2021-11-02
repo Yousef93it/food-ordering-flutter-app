@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/style.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/constants.dart';
 
 import '../cart/cart_screen.dart';
 import '../meal_detail/meal_detail_screen.dart';

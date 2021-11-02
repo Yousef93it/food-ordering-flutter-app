@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/cart/cart_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/badge.dart';
-
 import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/side_menu.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/constants.dart';
-import 'body.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/cart/cart_screen.dart';
 
-class RestaurantScreen extends StatelessWidget {
-  static String routeName = "/restaurant";
-  const RestaurantScreen({Key key}) : super(key: key);
+import '../../constants.dart';
+import 'components/body.dart';
 
+class FilterScreen extends StatelessWidget {
+  static String routeName = "/filter";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const SideMenu(),
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: aBitLighterGreen,
-        elevation: 0,
+        title: const Text("Filters"),
         actions: [
           Badge(
             child: IconButton(
@@ -34,9 +31,7 @@ class RestaurantScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const SafeArea(
-        child: Body(),
-      ),
+      body: Body(),
     );
   }
 }
