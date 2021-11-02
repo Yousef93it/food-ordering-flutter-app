@@ -56,16 +56,17 @@ class SideMenu extends StatelessWidget {
             // iconSvg: "assets/icons/Orders.svg",
             press: () {},
           ),
+          //for user to change his Info email, pass, name 
           DrawerListTile(
             title: "Settings",
             // iconSvg: "assets/icons/Settings.svg",
             press: () {},
           ),
-          DrawerListTile(
-            // iconSvg: "assets/icons/Info.svg",
-            title: "Help",
-            press: () {},
-          ),
+          // DrawerListTile(
+          //   // iconSvg: "assets/icons/Info.svg",
+          //   title: "Help",
+          //   press: () {},
+          // ),
           DrawerListTile(
             // iconSvg: "assets/icons/Logout.svg",
             title: "Logout",
