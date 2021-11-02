@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/cart/cart_screen.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/badge.dart';
 
 import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/side_menu.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/style.dart';
 import 'body.dart';
 
 class RestaurantScreen extends StatelessWidget {
@@ -9,9 +12,51 @@ class RestaurantScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      drawer: SideMenu(),
-      body: Body(),
+    return Scaffold(
+      drawer: const SideMenu(),
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: aBitLighterGreen,
+        elevation: 0,
+        actions: [
+          Badge(
+            child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, CartScreen.routeName);
+              },
+              icon: const Icon(
+                Icons.shopping_cart,
+                size: 27,
+                color: Colors.white,
+              ),
+            ),
+            value: "2",
+          ),
+        ],
+      ),
+      body: const SafeArea(
+        child: Body(),
+      ),
     );
   }
 }
+ 
+//  Row(
+//                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                             children: [
+//                               IconButton(
+//                                 onPressed: () {},
+//                                 icon: const Icon(
+//                                   Icons.arrow_back,
+//                                   color: Colors.white,
+//                                 ),
+//                               ),
+//                               IconButton(
+//                                 onPressed: () {},
+//                                 icon: const Icon(
+//                                   Icons.shopping_cart,
+//                                   color: Colors.white,
+//                                 ),
+//                               ),
+//                             ],
+//                           ),

@@ -4,6 +4,7 @@ import 'package:food_ordering_app_ui_fur_mobile_systeme/style.dart';
 
 import '../cart/cart_screen.dart';
 import '../meal_detail/meal_detail_screen.dart';
+
 class Body extends StatefulWidget {
   const Body({Key key}) : super(key: key);
 
@@ -12,219 +13,198 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-   bool isStarred = false;
+  bool isStarred = false;
   @override
-  Widget build(BuildContext context) {  
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: blue,
-                        image: const DecorationImage(
-                          image: AssetImage("assets/images/hotelBig.png"),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(40),
-                          bottomRight: Radius.circular(40),
-                        ),
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: blue,
+                      image: const DecorationImage(
+                        image: AssetImage("assets/images/hotelBig.png"),
+                        fit: BoxFit.cover,
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 20),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.arrow_back,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.shopping_cart,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 200),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const SizedBox(height: 20),
-                                  const Text(
-                                    "Okinawa Sushi",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Row(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: const [
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.white,
-                                      ),
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.white,
-                                      ),
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.white,
-                                      ),
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.white,
-                                      ),
-                                      Icon(
-                                        Icons.star,
-                                        color: Colors.white,
-                                      ),
-                                      SizedBox(width: 5),
-                                      Text(
-                                        "250 Reviews",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 13,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 15),
-                              Container(
-                                height: 70,
-                                width: 70,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.white,
-                                ),
-                                child: Center(
-                                  child: IconButton(
-                                    icon: Icon(
-                                        isStarred
-                                            ? Icons.star
-                                            : Icons.star_border,
-                                        size: 35,
-                                        color: Colors.orange),
-                                    onPressed: () {
-                                      setState(() {
-                                        isStarred = !isStarred;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 15),
-                          const Text(
-                            "Lorem ipsum dolar sits amet was ist daaaas",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13,
-                            ),
-                          ),
-                        ],
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40),
                       ),
                     ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(height: 15),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const Text(
-                        "Today's Special",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 20),
-                          height: 0.5,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  restaurantsbuilder("food1", "Sushi Plate"),
-                  const SizedBox(height: 20),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const Text(
-                        "Dishes",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 20),
-                          height: 0.5,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        dishItemWidget("sushi", "Row Sushi",
-                            "10 types of sushi served in a row"),
-                        const SizedBox(width: 10),
-                        dishItemWidget("sushi2", "Prato Sushi",
-                            "10 types of sushi served in a row"),
-                        const SizedBox(width: 10),
-                        dishItemWidget("sushi3", "Sushi Box",
-                            "10 types of sushi served in a row"),
-                        const SizedBox(width: 10),
-                        dishItemWidget("sushi4", "Row Sushi",
-                            "10 types of sushi served in a row"),
+                        const SizedBox(height: 20),
+                        const SizedBox(height: 200),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const SizedBox(height: 20),
+                                const Text(
+                                  "Okinawa Sushi",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: const [
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 5),
+                                    Text(
+                                      "250 Reviews",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 13,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 15),
+                            Container(
+                              height: 70,
+                              width: 70,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                              ),
+                              child: Center(
+                                child: IconButton(
+                                  icon: Icon(
+                                      isStarred
+                                          ? Icons.star
+                                          : Icons.star_border,
+                                      size: 35,
+                                      color: Colors.orange),
+                                  onPressed: () {
+                                    setState(() {
+                                      isStarred = !isStarred;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 15),
+                        const Text(
+                          "Lorem ipsum dolar sits amet was ist daaaas",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ],
               ),
+            ],
+          ),
+          const SizedBox(height: 15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const Text(
+                      "Today's Special",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        height: 0.5,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                restaurantsbuilder("food1", "Sushi Plate"),
+                const SizedBox(height: 20),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const Text(
+                      "Dishes",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        height: 0.5,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      dishItemWidget("sushi", "Row Sushi",
+                          "10 types of sushi served in a row"),
+                      const SizedBox(width: 10),
+                      dishItemWidget("sushi2", "Prato Sushi",
+                          "10 types of sushi served in a row"),
+                      const SizedBox(width: 10),
+                      dishItemWidget("sushi3", "Sushi Box",
+                          "10 types of sushi served in a row"),
+                      const SizedBox(width: 10),
+                      dishItemWidget("sushi4", "Row Sushi",
+                          "10 types of sushi served in a row"),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -313,35 +293,7 @@ class _BodyState extends State<Body> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: aBitLighterGreen,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: aBitLighterGreen,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: aBitLighterGreen,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: aBitLighterGreen,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 20,
-                    color: aBitLighterGreen,
-                  ),
-                ],
-              ),
+              const SizedBox(height: 8),
               const Text(
                 "Lorem ipsum sits dolar amet is for publishing",
                 style: TextStyle(fontSize: 12),

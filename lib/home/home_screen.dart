@@ -11,13 +11,17 @@ import '../style.dart';
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
   const HomeScreen({Key key}) : super(key: key);
+  void openMealDetailScreen(BuildContext context) {
+    Navigator.of(context).pushNamed(MealDetailScreen.routeName);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const SideMenu(),
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black38),
-        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: aBitLighterGreen,
         elevation: 0,
         actions: [
           Badge(
@@ -28,7 +32,7 @@ class HomeScreen extends StatelessWidget {
               icon: const Icon(
                 Icons.shopping_cart,
                 size: 27,
-                color: Colors.black38,
+                color: Colors.white,
               ),
             ),
             value: "2",
@@ -74,59 +78,62 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.55,
-                        height: 350,
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 40,
-                          horizontal: 20,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(30),
+                      InkWell(
+                        onTap: () => openMealDetailScreen(context),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.55,
+                          height: 350,
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 40,
+                            horizontal: 20,
                           ),
-                          color: blue,
-                          boxShadow: [
-                            BoxShadow(
-                              spreadRadius: 0,
-                              offset: const Offset(0, 10),
-                              blurRadius: 0,
-                              color: blue.withOpacity(0.4),
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(30),
                             ),
-                          ],
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      "assets/images/food1.png",
+                            color: blue,
+                            boxShadow: [
+                              BoxShadow(
+                                spreadRadius: 0,
+                                offset: const Offset(0, 10),
+                                blurRadius: 0,
+                                color: blue.withOpacity(0.4),
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                        "assets/images/food1.png",
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(height: 15),
-                            const Text(
-                              "Tokyo Sushi",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
+                              const SizedBox(height: 15),
+                              const Text(
+                                "Tokyo Sushi",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
-                            ),
-                            const SizedBox(height: 10),
-                            const Text(
-                              "Lorem ipsium was ist daaaas?!",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 13,
+                              const SizedBox(height: 10),
+                              const Text(
+                                "Lorem ipsium was ist daaaas?!",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 13,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -134,94 +141,100 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Column(
                         children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.35,
-                            height: 165,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 20),
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(30)),
-                              color: green,
-                              boxShadow: [
-                                BoxShadow(
-                                  spreadRadius: 0,
-                                  offset: const Offset(0, 10),
-                                  blurRadius: 0,
-                                  color: green.withOpacity(0.4),
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                          "assets/images/food2.png",
+                          InkWell(
+                            onTap: () => openMealDetailScreen(context),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.35,
+                              height: 165,
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20, horizontal: 20),
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(30)),
+                                color: green,
+                                boxShadow: [
+                                  BoxShadow(
+                                    spreadRadius: 0,
+                                    offset: const Offset(0, 10),
+                                    blurRadius: 0,
+                                    color: green.withOpacity(0.4),
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            "assets/images/food2.png",
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                const SizedBox(height: 15),
-                                const Text(
-                                  "Okinawa Sushi",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
+                                  const SizedBox(height: 15),
+                                  const Text(
+                                    "Sushi Plate",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w700,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                           const SizedBox(height: 20),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.35,
-                            height: 165,
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 20),
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(30)),
-                              color: black,
-                              boxShadow: [
-                                BoxShadow(
-                                  spreadRadius: 0,
-                                  offset: const Offset(0, 10),
-                                  blurRadius: 0,
-                                  color: black.withOpacity(0.4),
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                          "assets/images/food3.png",
+                          InkWell(
+                            onTap: () => openMealDetailScreen(context),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.35,
+                              height: 165,
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20, horizontal: 20),
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(30)),
+                                color: black,
+                                boxShadow: [
+                                  BoxShadow(
+                                    spreadRadius: 0,
+                                    offset: const Offset(0, 10),
+                                    blurRadius: 0,
+                                    color: black.withOpacity(0.4),
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            "assets/images/food3.png",
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                const SizedBox(height: 15),
-                                const Text(
-                                  "Somewhere's Sushi",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
+                                  const SizedBox(height: 15),
+                                  const Text(
+                                    "Spicy Ramen",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w700,
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(height: 5),
-                              ],
+                                  const SizedBox(height: 5),
+                                ],
+                              ),
                             ),
                           ),
                         ],
