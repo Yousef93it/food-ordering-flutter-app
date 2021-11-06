@@ -27,8 +27,7 @@ class SideMenu extends StatelessWidget {
             title: "Home",
             //  iconSvg: "assets/icons/Home.svg",
             press: () {
-              Navigator.of(context)
-                  .pushReplacementNamed(HomeScreen.routeName);
+              Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
             },
           ),
           DrawerListTile(
@@ -43,24 +42,18 @@ class SideMenu extends StatelessWidget {
             title: "Favorites",
             //  iconSvg: "assets/icons/Home.svg",
             press: () {
-               Navigator.of(context)
+              Navigator.of(context)
                   .pushReplacementNamed(FavoritesScreen.routeName);
             },
           ),
           DrawerListTile(
-            title: "Cart",
+            title: "Orders",
             // iconSvg: "assets/icons/Cart.svg",
             press: () {
-              Navigator.of(context)
-                  .pushReplacementNamed(OrderScreen.routeName);
+              Navigator.of(context).pushReplacementNamed(OrderScreen.routeName);
             },
           ),
-          DrawerListTile(
-            title: "Orders",
-            // iconSvg: "assets/icons/Orders.svg",
-            press: () {},
-          ),
-          //for user to change his Info email, pass, name 
+          //for user to change his Info email, pass, name
           DrawerListTile(
             title: "Settings",
             // iconSvg: "assets/icons/Settings.svg",

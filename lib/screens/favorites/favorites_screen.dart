@@ -4,7 +4,7 @@ import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/side_menu
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/order/order_screen.dart';
 
 import '../../constants.dart';
-import 'body.dart';
+import 'components/body.dart';
 
 class FavoritesScreen extends StatelessWidget {
   static String routeName = "/favorites";
@@ -31,7 +31,7 @@ class FavoritesScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Body(),
+      body: Body(),
     );
   }
 }
