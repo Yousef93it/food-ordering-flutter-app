@@ -1,8 +1,8 @@
-// Modify meal detail screen (allow user to compose a meal)
-// Add a Favorites screen
 // Add a Settings screen
-// Add a (checkout) Screen payment...
+// Modify meal detail screen (allow user to compose a meal)
 // Add Icons for the Side Menu
+// Add a (checkout) Screen payment...
+
 
 // LATER => depends on logo
 //   Add a Splash Screen
