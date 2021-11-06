@@ -1,4 +1,4 @@
-// Add an Orders screen
+// Add an Orders screen => make order item dismissible
 // Modify meal detail screen (allow user to compose a meal)
 // Add a (checkout) Screen payment...
 // Add a Favorites screen
