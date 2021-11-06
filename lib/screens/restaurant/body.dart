@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/constants.dart';
 
-import '../cart/cart_screen.dart';
+import '../../constants.dart';
+import '../order/order_screen.dart';
 import '../meal_detail/meal_detail_screen.dart';
 
 class Body extends StatefulWidget {
@@ -26,13 +26,13 @@ class _BodyState extends State<Body> {
                 children: [
                   Container(
                     padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: blue,
-                      image: const DecorationImage(
+                      image:  DecorationImage(
                         image: AssetImage("assets/images/hotelBig.png"),
                         fit: BoxFit.cover,
                       ),
-                      borderRadius: const BorderRadius.only(
+                      borderRadius:  BorderRadius.only(
                         bottomLeft: Radius.circular(40),
                         bottomRight: Radius.circular(40),
                       ),
@@ -241,7 +241,7 @@ class _BodyState extends State<Body> {
               const SizedBox(height: 5),
               Text(
                 dishDescription,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                   color: black,
@@ -305,8 +305,8 @@ class _BodyState extends State<Body> {
           onTap: openMealDetailScreen,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(40)),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(40)),
               color: aBitLighterGreen,
             ),
             child: const Text(
@@ -324,7 +324,7 @@ class _BodyState extends State<Body> {
 
   void openCartScreen() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const CartScreen()));
+        context, MaterialPageRoute(builder: (context) => const OrderScreen()));
   }
 
   void openMealDetailScreen() {

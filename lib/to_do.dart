@@ -1,5 +1,7 @@
-// Add a Cart Screen
-// Add a Favorites screen
 // Add an Orders screen
-// Add a Settings screen
 // Modify meal detail screen (allow user to compose a meal)
+// Add a (checkout) Screen payment...
+// Add a Favorites screen
+// Add a Settings screen
+// Add Icons for the Side Menu
+// Add a Splash Screen

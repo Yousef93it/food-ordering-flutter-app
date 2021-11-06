@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/badge.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/global_widgets/side_menu.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/cart/cart_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/home/search_field.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/order/order_screen.dart';
 
 import '../../constants.dart';
 import '../meal_detail/meal_detail_screen.dart';
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           Badge(
             child: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, CartScreen.routeName);
+                Navigator.pushNamed(context, OrderScreen.routeName);
               },
               icon: const Icon(
                 Icons.shopping_cart,
