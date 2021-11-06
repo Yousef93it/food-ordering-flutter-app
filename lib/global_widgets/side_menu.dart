@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/constants.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/favorites/favorites_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/order/order_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/filter/filter_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/home/home_screen.dart';
@@ -41,7 +42,10 @@ class SideMenu extends StatelessWidget {
           DrawerListTile(
             title: "Favorites",
             //  iconSvg: "assets/icons/Home.svg",
-            press: () {},
+            press: () {
+               Navigator.of(context)
+                  .pushReplacementNamed(FavoritesScreen.routeName);
+            },
           ),
           DrawerListTile(
             title: "Cart",

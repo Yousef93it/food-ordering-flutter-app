@@ -4,7 +4,7 @@ import '../../constants.dart';
 import 'components/body.dart';
 
 class OrderScreen extends StatelessWidget {
-  static String routeName = "/cart";
+  static String routeName = "/orders";
   const OrderScreen({Key key}) : super(key: key);
 
   @override

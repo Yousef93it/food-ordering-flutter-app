@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/filter/filter_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/forgotPassword/forgot_password_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/forgotPassword/reset_email_sent_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/home/home_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/meal_detail/meal_detail_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/order/order_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/restaurant/restaurant_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/signIn/sign_in_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/signUp/sign_up_screen.dart';
-import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/unknown_route/unknown_route_screen.dart';
+
+import 'screens/filter/filter_screen.dart';
+import 'screens/forgotPassword/forgot_password_screen.dart';
+import 'screens/forgotPassword/reset_email_sent_screen.dart';
+import 'screens/home/home_screen.dart';
+import 'screens/meal_detail/meal_detail_screen.dart';
+import 'screens/order/order_screen.dart';
+import 'screens/restaurant/restaurant_screen.dart';
+import 'screens/signIn/sign_in_screen.dart';
+import 'screens/signUp/sign_up_screen.dart';
+import 'screens/unknown_route/unknown_route_screen.dart';
+import 'screens/favorites/favorites_screen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   HomeScreen.routeName: (context) => const HomeScreen(),
@@ -21,6 +23,7 @@ final Map<String, WidgetBuilder> routes = {
   SignUpScreen.routeName: (context) => SignUpScreen(),
   FilterScreen.routeName: (context) => FilterScreen(),
   UnknownRouteScreen.routeName: (context) => UnknownRouteScreen(),
+  FavoritesScreen.routeName: (context) => FavoritesScreen(),
 
 
 
