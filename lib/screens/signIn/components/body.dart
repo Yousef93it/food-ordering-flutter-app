@@ -24,14 +24,11 @@ class Body extends StatelessWidget {
               text:
                   "Enter your Phone number or Email \naddress for sign in. Enjoy your food :)",
             ),
-
             // SignInForm contains forget password
             const SignInForm(),
             const VerticalSpacing(),
             kOrText,
             const VerticalSpacing(of: 20),
-
-            // Create new account
             Center(
               child: Text.rich(
                 TextSpan(
@@ -57,8 +54,6 @@ class Body extends StatelessWidget {
               ),
             ),
             const VerticalSpacing(),
-
-            // Facebook
             SocialButton(
               press: () {
                 Navigator.of(context)
@@ -72,8 +67,6 @@ class Body extends StatelessWidget {
               ),
             ),
             const VerticalSpacing(of: 15),
-
-            // Google
             SocialButton(
               press: () {
                 Navigator.of(context)

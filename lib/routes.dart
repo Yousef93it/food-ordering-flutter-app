@@ -7,6 +7,7 @@ import 'screens/home/home_screen.dart';
 import 'screens/meal_detail/meal_detail_screen.dart';
 import 'screens/order/order_screen.dart';
 import 'screens/restaurant/restaurant_screen.dart';
+import 'screens/settings/settings_screen.dart';
 import 'screens/signIn/sign_in_screen.dart';
 import 'screens/signUp/sign_up_screen.dart';
 import 'screens/unknown_route/unknown_route_screen.dart';
@@ -24,8 +25,5 @@ final Map<String, WidgetBuilder> routes = {
   FilterScreen.routeName: (context) => FilterScreen(),
   UnknownRouteScreen.routeName: (context) => UnknownRouteScreen(),
   FavoritesScreen.routeName: (context) => FavoritesScreen(),
-
-
-
-
+  SettingsScreen.routeName: (context) => const SettingsScreen(),
 };

@@ -5,6 +5,7 @@ import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/favorites/favori
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/order/order_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/filter/filter_screen.dart';
 import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/home/home_screen.dart';
+import 'package:food_ordering_app_ui_fur_mobile_systeme/screens/settings/settings_screen.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -57,7 +58,10 @@ class SideMenu extends StatelessWidget {
           DrawerListTile(
             title: "Settings",
             // iconSvg: "assets/icons/Settings.svg",
-            press: () {},
+            press: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(SettingsScreen.routeName);
+            },
           ),
           // DrawerListTile(
           //   // iconSvg: "assets/icons/Info.svg",

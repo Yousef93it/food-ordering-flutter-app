@@ -16,12 +16,9 @@ class SignInForm extends StatefulWidget {
 }
 
 class _SignInFormState extends State<SignInForm> {
-  // Note: This is a `GlobalKey<FormState>`,
-  // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
   bool _autoValidate = false;
   bool _obscureText = true;
-
   FocusNode _passwordNode;
 
   @override
@@ -50,7 +47,6 @@ class _SignInFormState extends State<SignInForm> {
             onSaved: (value) => _email = value,
             textInputAction: TextInputAction.next,
             onEditingComplete: () {
-              // Once user click on Next then it go to password field
               _passwordNode.requestFocus();
             },
             style: kSecondaryBodyTextStyle,
@@ -62,7 +58,6 @@ class _SignInFormState extends State<SignInForm> {
             ),
           ),
           const VerticalSpacing(),
-          // Password Field
           TextFormField(
             focusNode: _passwordNode,
             obscureText: _obscureText,
@@ -87,7 +82,6 @@ class _SignInFormState extends State<SignInForm> {
             ),
           ),
           const VerticalSpacing(),
-          // Forget Password text button
           GestureDetector(
             onTap: () => Navigator.push(
               context,
@@ -108,7 +102,7 @@ class _SignInFormState extends State<SignInForm> {
             text: "Sign In",
             press: () {
               if (_formKey.currentState.validate()) {
-                // If all data are correct then save data to out variables
+                // If all data are correct => save data in vars
                 _formKey.currentState.save();
                 Navigator.of(context)
                     .pushReplacementNamed(HomeScreen.routeName);
